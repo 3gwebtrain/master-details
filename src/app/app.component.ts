@@ -1,10 +1,18 @@
 import { Component } from '@angular/core';
+import { Book } from '../book';
+import { BOOKS } from '../mock-books';
 
 @Component({
-  selector: 'app-root',
+  selector: 'books-list',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
-  title = 'app';
+	booksList:Book[] = BOOKS;
+	selectedBook:Book;
+
+	getBookDetails(isbn:number){
+		this.selectedBook =this.booksList.filter(book=>book.isbn === isbn)[0];
+	}
 }
