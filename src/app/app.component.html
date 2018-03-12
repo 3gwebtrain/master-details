@@ -17,16 +17,6 @@
     </ul>
   </div>
   <div class="col-xs-9">
-    <div  *ngIf="selectedBook" class="row selected-book">
-      <div class="col-xs-2">
-        <img [src]="selectedBook.coverImage" alt="cover image"/>
-      </div>
-      <div class="col-xs-8">
-        <h3 class="title">{{selectedBook.title}}</h3>
-        <p>{{selectedBook.authors}}</p>
-        <p>{{selectedBook.published}}</p>
-        <p>{{selectedBook.description}}</p>
-      </div>
-    </div>
+    <book-details [book]="selectedBook"></book-details>
   </div>
 </div>

@@ -1,1 +1,5 @@
-/* You can add global styles to this file, and also import other style files */
+.cover-image img,
+.col-xs-2 img{
+	width: 20%;
+	border: 2px solid red;
+}
