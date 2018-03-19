@@ -3,7 +3,13 @@
 	<form novalidate #formRef="ngForm" (ngSubmit)="onSubmit(formRef.value)">
 		<div class="col-sm-6 form-group">
 			<label>First name</label>
-			<input type="text" class="form-control" ngModel #firstName="ngModel" name="firstName" >
+			<input type="text" class="form-control" ngModel #firstNameRef="ngModel" name="firstName" required>
+			<pre>{{firstNameRef?.errors | json}}</pre>
+			<pre>{{firstNameRef.valid}}</pre>
+			<pre>{{formRef.valid}}</pre>
+			<div *ngIf="firstNameRef.touched && firstNameRef?.errors?.required" class="error-message">
+				The first name is required
+			</div>
 		</div>
 		<div class="col-sm-6 form-group">
 			<label>Last name</label>
